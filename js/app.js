@@ -13,6 +13,8 @@ today.setUTCHours(0, 0, 0, 0);
 let seed = today.getTime();
 const alertDiv = document.getElementById("alert-box");
 alertDiv.style.visibility = "hidden";
+const helpDiv = document.getElementById("help-box");
+helpDiv.style.visibility = "hidden";
 
 const url = new URL(document.location);
 const urlSeed = url.searchParams.get("seed");
@@ -54,7 +56,9 @@ document.getElementById("generate-seed").addEventListener("click", function() {
 document.getElementById("share").addEventListener("click", function() {
   copyToClipboard();
 });
-
+document.getElementById("help").addEventListener("click", function() {
+  viewHelpPage();
+});
 daily.addEventListener("click", function() {
   // To remove the search params
   window.location = window.location.pathname;
@@ -86,4 +90,9 @@ function copyToClipboard() {
   setTimeout(function() {
     alertDiv.style.visibility = "hidden";
   }, 3000);
+}
+
+function viewHelpPage()
+{
+  window.location.href = "../html/help.html";
 }

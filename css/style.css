@@ -71,5 +71,5 @@ body {
 .alert-box {
   text-align: center;
   padding: 20px;
-  grid-column: 1 / 4;
+  grid-column: 2;
 }
